@@ -9,7 +9,7 @@ require 'includes/header.php';
     <div class="container hero-grid">
         <div>
             <span class="eyebrow">Praktikum Web Development</span>
-            <h1>Belajar membangun website dinamis sambil mempraktikkan Git.</h1>
+            <h1>Selamat Datang di Web Resmi Simulasi Telkom University</h1>
             <p class="lead">Proyek simulasi ini menggunakan HTML, CSS, PHP native, MySQL/MariaDB, dan workflow Git lokal serta GitHub.</p>
             <div class="actions">
                 <a class="btn btn-primary" href="programs.php">Lihat Program Studi</a>
