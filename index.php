@@ -1,65 +1,34 @@
 <?php
-require_once 'config/database.php';
 $pageTitle = 'Beranda - Telkom University';
-$programResult = $conn->query("SELECT id, nama, jenjang, deskripsi FROM program_studi ORDER BY id ASC LIMIT 3");
-$newsResult = $conn->query("SELECT id, judul, ringkasan, tanggal_publish FROM berita ORDER BY tanggal_publish DESC LIMIT 3");
 require 'includes/header.php';
 ?>
 <section class="hero">
-    <div class="container hero-grid">
-        <div>
-            <span class="eyebrow">Praktikum Web Development</span>
-            <h1>Belajar membangun website dinamis sambil mempraktikkan Git.</h1>
-            <p class="lead">Proyek simulasi ini menggunakan HTML, CSS, PHP native, MySQL/MariaDB, dan workflow Git lokal serta GitHub.</p>
-            <div class="actions">
-                <a class="btn btn-primary" href="programs.php">Lihat Program Studi</a>
-                <a class="btn btn-outline" href="news.php">Baca Berita</a>
-            </div>
+    <div class="container hero-content">
+        <h1>Selamat Datang di Portal Utama Telkom University</h1>
+        <p>Proyek ini dibuat untuk mempraktikkan alur kerja pengembangan web berbasis PHP Native dan version control menggunakan Git.</p>
+        <div class="hero-actions">
+            <a href="programs.php" class="btn btn-primary">Lihat Program Studi</a>
+            <a href="contact.php" class="btn btn-secondary">Hubungi Kami</a>
         </div>
-        <aside class="hero-card">
-            <span class="badge">Project Milestone</span>
-            <h3>Target praktikum</h3>
-            <div class="hero-stat">
-                <div class="stat"><strong>5+</strong><span>Halaman PHP</span></div>
-                <div class="stat"><strong>3</strong><span>Tabel database</span></div>
-                <div class="stat"><strong>8+</strong><span>Commit terarah</span></div>
-                <div class="stat"><strong>1</strong><span>Remote GitHub</span></div>
-            </div>
-        </aside>
     </div>
 </section>
+
 <section class="section">
     <div class="container">
-        <div class="section-heading">
-            <span class="eyebrow">Program Studi</span>
-            <h2>Contoh data dinamis dari database</h2>
-        </div>
-        <div class="grid-3">
-            <?php while ($program = $programResult->fetch_assoc()): ?>
-                <article class="card">
-                    <span class="badge"><?= htmlspecialchars($program['jenjang']) ?></span>
-                    <h3><?= htmlspecialchars($program['nama']) ?></h3>
-                    <p><?= htmlspecialchars($program['deskripsi']) ?></p>
-                </article>
-            <?php endwhile; ?>
-        </div>
-    </div>
-</section>
-<section class="section section-soft">
-    <div class="container">
-        <div class="section-heading">
-            <span class="eyebrow">Berita</span>
-            <h2>Informasi terbaru</h2>
-        </div>
-        <div class="grid-3">
-            <?php while ($news = $newsResult->fetch_assoc()): ?>
-                <article class="card">
-                    <p class="meta"><?= date('d M Y', strtotime($news['tanggal_publish'])) ?></p>
-                    <h3><?= htmlspecialchars($news['judul']) ?></h3>
-                    <p><?= htmlspecialchars($news['ringkasan']) ?></p>
-                    <a href="news_detail.php?id=<?= (int) $news['id'] ?>">Baca selengkapnya</a>
-                </article>
-            <?php endwhile; ?>
+        <h2>Informasi Proyek</h2>
+        <div class="grid grid-3">
+            <div class="card">
+                <h3>PHP & MySQL</h3>
+                <p>Menggunakan struktur modular PHP dan integrasi basis data relational.</p>
+            </div>
+            <div class="card">
+                <h3>Git Workflow</h3>
+                <p>Menerapkan commit, branching, merge, serta penanganan konflik secara terstruktur.</p>
+            </div>
+            <div class="card">
+                <h3>UI Sederhana</h3>
+                <p>Tampilan yang bersih dan responsif menggunakan CSS murni tanpa framework external.</p>
+            </div>
         </div>
     </div>
 </section>
