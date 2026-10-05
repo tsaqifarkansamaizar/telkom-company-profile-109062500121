@@ -3,7 +3,7 @@
 $host = '127.0.0.1'; // Ganti 'localhost' menjadi '127.0.0.1' agar lebih stabil
 $user = 'root';
 $password = ''; // Kosongkan jika belum set password di XAMPP
-$database = 'tsaqif arkan samaizar_109062500121';
+$database = 'telkom_profile';
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
