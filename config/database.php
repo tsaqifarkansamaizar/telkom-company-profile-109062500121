@@ -1,10 +1,9 @@
 <?php
 // Konfigurasi database untuk praktikum lokal XAMPP.
-// Sesuaikan nilai berikut jika konfigurasi MySQL/MariaDB Anda berbeda.
-$host = 'localhost';
+$host = '127.0.0.1'; // Ganti 'localhost' menjadi '127.0.0.1' agar lebih stabil
 $user = 'root';
-$password = '';
-$database = 'telkom_profile';
+$password = ''; // Kosongkan jika belum set password di XAMPP
+$database = 'tsaqif arkan samaizar_109062500121';
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
@@ -12,5 +11,7 @@ try {
     $conn = new mysqli($host, $user, $password, $database);
     $conn->set_charset('utf8mb4');
 } catch (mysqli_sql_exception $e) {
-    exit('Koneksi database gagal. Periksa Apache/MySQL dan konfigurasi database.');
+    // Tampilkan error aslinya agar kelihatan penyebab persisnya
+    exit('Koneksi database gagal: ' . $e->getMessage());
 }
+?>
