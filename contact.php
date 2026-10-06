@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Kontak - Telkom University';
-$success = isset($_GET['success']);
+$status = $_GET['status'] ?? '';
 require 'includes/header.php';
 ?>
 <section class="section">
@@ -9,8 +9,12 @@ require 'includes/header.php';
             <span class="eyebrow">Kontak</span>
             <h1>Kirim pesan</h1>
             <p class="lead">Form ini mendemonstrasikan proses INSERT ke database dengan prepared statement.</p>
-            <?php if ($success): ?>
+            <?php if ($status === 'success'): ?>
                 <div class="alert alert-success">Pesan berhasil disimpan ke database.</div>
+            <?php elseif ($status === 'error'): ?>
+                <div class="alert alert-error">Pesan gagal disimpan. Silakan coba lagi.</div>
+            <?php elseif ($status === 'empty'): ?>
+                <div class="alert alert-error">Nama, email yang valid, dan pesan wajib diisi.</div>
             <?php endif; ?>
         </div>
         <form class="card" action="contact_process.php" method="post">

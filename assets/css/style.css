@@ -83,6 +83,7 @@ input, textarea {
 textarea { min-height: 140px; resize: vertical; }
 .alert { padding: 13px 16px; border-radius: 10px; margin-bottom: 18px; }
 .alert-success { background: #eaf8f1; color: var(--success); border: 1px solid #b7e2cd; }
+.alert-error { background: #fff1f1; color: #a52a2a; border: 1px solid #edbcbc; }
 .table-wrap { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; background: #fff; }
 th, td { border-bottom: 1px solid var(--line); padding: 12px; text-align: left; }
